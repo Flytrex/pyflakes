@@ -9,6 +9,7 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
+
     extra = {'scripts': ["bin/pyflakes"]}
 else:
     extra = {
@@ -34,10 +35,15 @@ def get_long_description():
     return '\n\n'.join(descr)
 
 
+def flytrex_version(version):
+    delimiter = "." if "+" in version else "+"
+    return f"{version}{delimiter}flytrex-1"
+
+
 setup(
     name="pyflakes",
     license="MIT",
-    version=get_version(),
+    version=flytrex_version(get_version()),
     description="passive checker of Python programs",
     long_description=get_long_description(),
     author="A lot of people",
