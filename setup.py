@@ -37,7 +37,7 @@ def get_long_description():
 
 def flytrex_version(version):
     delimiter = "." if "+" in version else "+"
-    return f"{version}{delimiter}flytrex-3"
+    return f"{version}{delimiter}flytrex-4"
 
 
 setup(
